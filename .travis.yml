@@ -5,7 +5,7 @@ services:
 - docker
 env:
   global:
-  - SERVICE_UUID=e3d1e8d6-63ec-4383-8886-0bc02706c4b3
+  - SERVICE_UUID=1e38f8e2-6774-4f56-8f10-62ab8994e0d8
   - AOS_UPLOAD_SERVICE_URL=https://aoscloud.io:10000/api/v1/services/versions/
   - SP_CERTIFICATE=meta_folder/sp-client.pem
   - PRIVATE_KEY=meta_folder/private_key.pem
@@ -21,5 +21,5 @@ script:
   --key $PRIVATE_KEY --form "service=$SERVICE_UUID" --form "file=@package/service.tar.gz"
   $AOS_UPLOAD_SERVICE_URL
 before_install:
-- openssl aes-256-cbc -K $encrypted_f53b9f895f9f_key -iv $encrypted_f53b9f895f9f_iv
+- openssl aes-256-cbc -K $encrypted_ea30971434e1_key -iv $encrypted_ea30971434e1_iv
   -in meta_folder/private_key.pem.enc -out meta_folder/private_key.pem -d
